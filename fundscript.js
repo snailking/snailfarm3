@@ -212,7 +212,7 @@ function updateEverything(){
 function updateNextRoundStart(){
 	nextRoundStart(function(result2) {
 		var blocktime = Math.round((new Date()).getTime() / 1000); //current blocktime should be Unix timestamp
-		countdownState = parseFloat(result2) - parseFloat(blocktime);
+		downtimeState = parseFloat(result2) - parseFloat(blocktime);
 	});
 }
 		
