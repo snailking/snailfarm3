@@ -46,6 +46,7 @@ window.onclick = function(event) {
 /* COUNTDOWN */
 
 var countdownState = 1;
+var downtimeState = 1;
 		
 var fund_doublesnailpot;
 var fund_doubleminusbalance;
