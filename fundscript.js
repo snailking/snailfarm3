@@ -189,6 +189,31 @@ function webWithdrawBalance(){
 }
 
 /* COUNTDOWN UPDATE */
+
+//General updates
+function updateEverything(){
+	updateEthAccount();
+	updateMaxAcorn();
+	updatePlayerAcorn();
+	updateContractBalance();
+	updateSnailPot();
+	updateFieldTree2();
+	updateTreeEstimate();
+	updatePlayerBalance();
+	updatePlayerShare();
+	updateFundVariables();
+	updateDowntime();
+	updateNextRoundStart();
+	setTimeout(updateEverything, 10000);
+}
+	
+//Current state of the game
+function updateNextRoundStart(){
+	nextRoundStart(function(result2) {
+		var blocktime = Math.round((new Date()).getTime() / 1000); //current blocktime should be Unix timestamp
+		countdownState = parseFloat(result2) - parseFloat(blocktime);
+	});
+}
 		
 //Update game timer
 function updateCountdown(){
@@ -216,17 +241,36 @@ function updateCountdown(){
 		document.getElementById('fundingstate').textContent = 'THE ETHERTREE IS GROWING!';
 		countdowndoc.textContent = "GET ACORNS NOW";
 	}
-	updateEthAccount();
-	updateMaxAcorn();
-	updatePlayerAcorn();
-	updateContractBalance();
-	updateSnailPot();
-	updateFieldTree2();
-	updateTreeEstimate();
-	updatePlayerBalance();
-	updatePlayerShare();
-	updateFundVariables();
 	setTimeout(updateCountdown, 1000);
+}
+
+//Update round timer
+function updateDowntime(){
+	var roundstartdoc = document.getElementById("roundstart");
+	if(downtimeState > 0) {
+		downtimeState = downtimeState - 1;
+				
+		var	numhours = Math.floor(downtimeState / 3600);
+		var numminutes = Math.floor((downtimeState % 3600) / 60);
+		var numseconds = (downtimeState % 3600) % 60;
+				
+		if(numseconds < 10) {
+			numseconds = "0" + numseconds;
+		}
+		if(numminutes < 10) {
+			numminutes = "0" + numminutes;
+		}
+		if(numhours < 10) {
+			numhours = "0" + numhours;
+		}
+
+		var downtimeString = numhours + ":" + numminutes + ":" + numseconds;
+		roundstartdoc.textContent = downtimeString;
+	} else {
+		document.getElementById('roundstatus').textContent = 'ROUND 1 IS ACTIVE!';
+		roundstartdoc.innerHTML = '<a href="https://snailking.github.io/snailfarm3/">Play Now</a>';
+	}
+	setTimeout(updateDowntime, 1000);
 }
 		
 //Update FundTree-specific variables
