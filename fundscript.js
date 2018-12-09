@@ -217,7 +217,7 @@ function updateNextRoundStart(){
 		
 //Update game timer
 function updateCountdown(){
-	var countdowndoc = document.getElementById("countdown");
+	//var countdowndoc = document.getElementById("countdown");
 	if(countdownState > 0) {
 		countdownState = countdownState - 1;
 				
@@ -238,7 +238,7 @@ function updateCountdown(){
 		var countdownString = numhours + ":" + numminutes + ":" + numseconds;
 		countdowndoc.textContent = countdownString;
 	} else {
-		document.getElementById('fundingstate').textContent = 'THE ETHERTREE IS GROWING!';
+		//document.getElementById('fundingstate').textContent = 'THE ETHERTREE IS GROWING!';
 		countdowndoc.textContent = "GET ACORNS NOW";
 	}
 	setTimeout(updateCountdown, 1000);
