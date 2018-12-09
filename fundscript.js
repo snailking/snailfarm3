@@ -234,11 +234,11 @@ function updateFundVariables() {
 	fund_doublesnailpot = parseFloat(a_snailPot * 2).toFixed(3);
 	var doublesnailpotdoc = document.getElementById('doublesnailpot');
 	doublesnailpotdoc.textContent = fund_doublesnailpot;
-			
+	/*		
 	fund_doubleminusbalance = parseFloat(fund_doublesnailpot - a_contractBalance).toFixed(3);
 	var doubleminusbalancedoc = document.getElementById('doubleminusbalance');
 	doubleminusbalancedoc.textContent = fund_doubleminusbalance;
-			
+	*/		
 	fund_doubledivten = parseFloat(fund_doublesnailpot / 10).toFixed(4);
 	var doubledivtendoc = document.getElementById('doubledivten');
 	doubledivtendoc.textContent = fund_doubledivten;
