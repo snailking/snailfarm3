@@ -203,7 +203,6 @@ function updateEverything(){
 	updatePlayerBalance();
 	updatePlayerShare();
 	updateFundVariables();
-	updateDowntime();
 	updateNextRoundStart();
 	setTimeout(updateEverything, 10000);
 }
@@ -268,7 +267,7 @@ function updateDowntime(){
 		var downtimeString = numhours + ":" + numminutes + ":" + numseconds;
 		roundstartdoc.textContent = downtimeString;
 	} else {
-		document.getElementById('roundstatus').textContent = 'ROUND 1 IS ACTIVE!';
+		document.getElementById('roundstatus').textContent = 'ROUND 1 IS ACTIVE! ';
 		roundstartdoc.innerHTML = '<a href="https://snailking.github.io/snailfarm3/">Play Now</a>';
 	}
 	setTimeout(updateDowntime, 1000);
