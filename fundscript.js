@@ -10,11 +10,11 @@ window.addEventListener("load", function() {
         web3 = new Web3(web3.currentProvider);
         web3.version.getNetwork(function(error, result) {
             if (!error) {
-                if (result == "3") {
-					console.log("Ropsten Testnet successfully loaded!");
+                if (result == "1") {
+					console.log("Mainnet successfully loaded!");
                 } else {
-                    console.log("You must be on the Testnet to play SnailFarm 3 Test!");
-					web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/f423492af8504d94979d522c3fbf3794"));
+                    console.log("You must be on the Mainnet to play SnailFarm 3!");
+					web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/f423492af8504d94979d522c3fbf3794"));
 					//modal2.style.display = "block";
                 }
             }
@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
     } else {
         console.log("Web3 library not found.");
 		//modal2.style.display = "block";
-        web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/f423492af8504d94979d522c3fbf3794"));
+        web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/f423492af8504d94979d522c3fbf3794"));
     }
 });
 
