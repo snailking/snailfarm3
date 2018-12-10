@@ -161,7 +161,7 @@ function updateFieldTree2(){
 //Fund tree
 function webFundTree(){
 	if(countdownState > 0) {
-		modal.style.display = "block";
+		//modal.style.display = "block";
 	} else {
 		var weitospend = web3.toWei(f_tree,'ether');
 		FundTree(weitospend, function(){
@@ -172,7 +172,7 @@ function webFundTree(){
 //Claim share
 function webClaimShare(){
 	if(countdownState > 0) {
-		modal.style.display = "block";
+		//modal.style.display = "block";
 	} else {
 		ClaimAcornShare(function(){
 		});
@@ -182,7 +182,7 @@ function webClaimShare(){
 //Withdraw balance
 function webWithdrawBalance(){
 	if(countdownState > 0) {
-		modal.style.display = "block";
+		//modal.style.display = "block";
 	} else {
 		WithdrawBalance(function(){
 		});
