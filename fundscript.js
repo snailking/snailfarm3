@@ -27,7 +27,7 @@ window.addEventListener("load", function() {
 });
 
 /* MODAL */
-
+/*
 // Get the modal
 var modal = document.getElementById("modal");
 
@@ -42,10 +42,10 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
+*/
 /* COUNTDOWN */
 
-var countdownState = 1;
+var countdownState = 0;
 var downtimeState = 1;
 		
 var fund_doublesnailpot;
