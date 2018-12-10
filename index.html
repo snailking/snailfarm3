@@ -310,8 +310,68 @@
 			</div>
 		</div><br>	
 		<!-- QUICK START -->
+		<div class="jumbotron">
+			<h1 align="center" class="black-shadow">~~QUICK START~~</h1><br>
+			<h2 align="center" class="black-shadow">BUY your starting Snails. REACH 1 million Snails before anyone else!</h2>
+			<div class="row container-beige">
+				<div class="col-sm-3" align="left">
+					<img class="img-fluid" src="img/snail.png">
+				</div>
+				<div class="col-sm" align="center">
+					<br><h1>LET your Snails lay Eggs.</h1>
+					<h1>HATCH Eggs into Snails</h1>
+					<h1>TRADE Eggs on the market</h1>
+				</div>
+				<div class="col-sm-3" align="right">
+					<img class="img-fluid" src="img/egg.png">
+				</div>
+			</div>
+			<div class="row container-beige">
+				<div class="col-sm-3" align="left">
+					<br><img class="img-fluid" src="img/spider.png">
+				</div>
+				<div class="col-sm" align="center">
+					<br><h1>GROW your hatch size:</h1>
+					<h1>Compete to get FRIENDS</h1>
+					<h1>Find your very own FOOD</h1>
+				</div>
+				<div class="col-sm-3" align="right">
+					<img class="img-fluid" src="img/lettuce.png">
+				</div>
+			</div>
+			<div class="row container-beige">
+				<div class="col-sm-3" align="left">
+					<br><img class="img-fluid" src="img/acorn.png" height="200">
+				</div>
+				<div class="col-sm" align="center">
+					<br><h1>Passive rewards:</h1>
+					<h1>FUND the Ethertree</h1>
+					<h1>CLAIM the Snailmaster</h1>
+				</div>
+				<div class="col-sm-3" align="right">
+					<img class="img-fluid" src="img/druid.png">
+				</div>
+			</div>
+			<div class="row container-beige">
+				<div class="col-sm-3" align="left">
+					<br><img class="img-fluid" src="img/red.png"><br>
+				</div>
+				<div class="col-sm" align="center">
+					<br><h1>Didn't win this round?</h1>
+					<h1>GET Red Eggs next round</h1>					
+					<h1>GRAB the Red Harvest</h1><br><br>
+				</div>
+				<div class="col-sm-3" align="right">
+					<br><img class="img-fluid" src="img/red.png"><br>
+				</div>
+			</div>
+			<div align="center">
+				<a href="#top"><img height="48" src="img/arrow_circle.png"></a>
+			</div>
+		</div><br>		
+		<!-- GAME INFO -->
 		<div class="jumbotron">			
-			<a name="quickstart"><h2 align="center">QUICK START</h2></a>
+			<a name="quickstart"><h2 align="center">GAME INFO</h2></a>
 			<div class="container-beige">		
 				<p><b>SnailFarm</b> is an idlegame played in rounds. The goal is to be the first to reach <b>1 million Snails</b>. Once you hatch enough snails to get to that number, you win the round and receive the current pot.</p><br>
 				<p>At the end of the round, <b>all Snails and Eggs are wiped</b>, and the game starts anew 12 hours later.</p><br>
@@ -319,7 +379,6 @@
 			<div class="container-beige">
 					<p>To get started, you must first buy starting Snails. This one-time transaction will allow you to play <b>every</b> round.</p><br>
 					<p>Your Snails continuously <b>lay Eggs</b>, which you can hatch into even more Snails for a slight, fixed ETH cost. Each Egg can hatch into <b>more than one Snail</b>: the more Boosts you have, the more Snails per Egg.</p><br>
-					<p>Any change in your Snail numbers affects your Egg count! If you sacrifice Snails, <b>some Eggs may be lost</b> in proportion.</p><br>
 					<p>Eggs can be <b>bought and sold directly from the smart contract</b>. The price of Eggs <b>vary widely</b> based on the current supply of Eggs and the eggpot. If the eggpot has a lot of ETH but the market holds very few Eggs, it's time to sell. On the contrary, if the eggpot has little ETH but the market is filled with Eggs, it's a good opportunity to buy.</p><br>
 			</div>
 			<div class="container-beige">		
@@ -339,7 +398,10 @@
 			<div class="container-beige">		
 					<p>SnailFarm is part of the <b>SnailThrone</b> ecosystem. SnailThrone holders are entitled to part of the ETH spent on SnailFarm. Check out SnailThrone if you want to know more: <a href="https://snailking.github.io/snailthrone/" target="_blank">https://snailking.github.io/snailthrone/</a></p><br>
 			</div>
-		</div>
+			<div align="center">
+				<a href="#top"><img height="48" src="img/arrow_circle.png"></a>
+			</div>
+		</div><br>
 		<!-- GAME MECHANICS -->
 		<div class="jumbotron">
 			<h2 align="center">GAME MECHANICS</h2><br>
@@ -393,6 +455,7 @@
 				<p>The SquirrelDuke costs 2 Red Eggs. This requirement doubles with every flip.</p>
 				<p>The TadpolePrince costs 0.02 ETH. This requirement increases by 20% with every flip. On the next flip, the Tadpole owner will receive 110% of the ETH he spent.</p>
 				<p>Players can specify a higher amount of ETH than strictly required, in order to ensure they get the Tadpole through several flips. Any ETH over the requirement will be refunded to the player balance.</p>
+				<p>The Slug should be seen as a longterm play, giving up on a round in order to gain a significant advantage in further rounds.</p>
 			</div>
 			<h3>SNAILMASTER</h3>
 			<div class="container-beige">
@@ -430,7 +493,7 @@
 		<!-- Main Javascript -->
 		<script src="snailfarm3.js"></script>				
 		<script>
-			main();
+			main()
 		</script>
 		
 	</body>
