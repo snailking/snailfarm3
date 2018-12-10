@@ -123,7 +123,7 @@ body {
 
 /* Modal (from W3Schools) */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 200px; /* Location of the box */
@@ -138,8 +138,8 @@ body {
 
 /* Modal Content */
 .modal-content {
-    width: 60%;
-	max-width: 800px;
+    width: 100%;
+	max-width: 960px;
 }
 
 /* The Close Button */

@@ -43,28 +43,12 @@ span2.onclick = function() {
 }
 
 /* MODAL */
-/*
+
 // Get the modal
 var modal = document.getElementById("modal");
 
-// Get the button that opens the modal
-var b_helpmodal = document.getElementById("helpmodal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementById("close");
-
-// When the user clicks the button, open the modal 
-b_helpmodal.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
 // Close modal on game info
-function closeModal() {
+function CloseModal() {
 	modal.style.display = "none";
 }
 
@@ -72,7 +56,6 @@ function closeModal() {
 window.onclick = function(event) {
     if (event.target == modal || event.target == modal2) {
         modal.style.display = "none";
-		modal2.style.display = "none";
     }
 }
 
@@ -342,7 +325,7 @@ function updatePlayerStatus(){
 		} else if(a_playerRound != a_round){
 			playerstatusdoc.innerHTML = '<button class="btn btn-success" onclick="webJoinRound()">Join New Round!</button><br><p class="black-shadow">(will give you red eggs for your previous performance)</p>';
 		} else {
-			playerstatusdoc.innerHTML = '<img height="64" src="snail.png">';
+			playerstatusdoc.innerHTML = '<img height="64" src="img/snail.png">';
 		}
 	} else {
 		playerstatusdoc.innerHTML = '<button class="btn btn-success" onclick="webBeginRound()">Begin New Round!</button><br><p class="black-shadow">(will only work if countdown timer is at 0)</p>';
@@ -388,27 +371,27 @@ function showLeaderboard() {
 				leaderboarddoc.innerHTML += "#" + d_leaderboard[j].rank + " | " + formatEthAdr(d_leaderboard[j].address) + " | " + d_leaderboard[j].hatchery + " Snails | " + d_leaderboard[j].egg + " Eggs | " + d_leaderboard[j].red + " Reds | ";
 				////console.log("updated rank " + i + " with index " + j);
 				if(d_leaderboard[j].boost1 == true) {
-					leaderboarddoc.innerHTML += "<img src='spider.png' height='32'>";
+					leaderboarddoc.innerHTML += "<img src='img/spider.png' height='32'>";
 					////console.log(d_leaderboard[j] + " has spidersqueen");
 				}
 				if(d_leaderboard[j].boost2 == true) {
-					leaderboarddoc.innerHTML += "<img src='squirrel.png' height='32'>";
+					leaderboarddoc.innerHTML += "<img src='img/squirrel.png' height='32'>";
 					////console.log(d_leaderboard[j] + " has squirrel");
 				}
 				if(d_leaderboard[j].boost3 == true) {
-					leaderboarddoc.innerHTML += "<img src='tadpole.png' height='32'>";
+					leaderboarddoc.innerHTML += "<img src='img/tadpole.png' height='32'>";
 					////console.log(d_leaderboard[j] + " has tadpole");
 				}
 				if(d_leaderboard[j].boost4 == true) {
-					leaderboarddoc.innerHTML += "<img src='lettuce.png' height='32'>";
+					leaderboarddoc.innerHTML += "<img src='img/lettuce.png' height='32'>";
 					//console.log(d_leaderboard[j] + " has lettuce");
 				}
 				if(d_leaderboard[j].boost5 == true) {
-					leaderboarddoc.innerHTML += "<img src='carrot.png' height='32'>";
+					leaderboarddoc.innerHTML += "<img src='img/carrot.png' height='32'>";
 					////console.log(d_leaderboard[j] + " has carrot");
 				}
 				if(d_leaderboard[j].boost6 == true) {
-					leaderboarddoc.innerHTML += "<img src='slug.png' height='32'>";
+					leaderboarddoc.innerHTML += "<img src='img/slug.png' height='32'>";
 					////console.log(d_leaderboard[j] + " has slug");
 				}
 				leaderboarddoc.innerHTML += "<br>";
