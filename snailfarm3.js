@@ -348,7 +348,7 @@ function fastupdateDowntime(){
 		downtime_hours = Math.floor(a_downtime / 3600);
 		if(downtime_hours < 10) { downtime_hours = "0" + downtime_hours }
 		downtime_minutes = Math.floor((a_downtime % 3600) / 60);
-		if(downtime_minutes < 10) { downtime_hours = "0" + downtime_minutes }
+		if(downtime_minutes < 10) { downtime_minutes = "0" + downtime_minutes }
 		downtime_seconds = parseFloat((a_downtime % 3600) % 60).toFixed(0);
 		if(downtime_seconds < 10) { downtime_seconds = "0" + downtime_seconds }
 		
