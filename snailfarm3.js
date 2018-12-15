@@ -43,7 +43,7 @@ span2.onclick = function() {
 }
 
 /* MODAL */
-
+/*
 // Get the modal
 var modal = document.getElementById("modal");
 
@@ -58,7 +58,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
+*/
 /* UTILITIES */
 
 //Truncates ETH value to 3 decimals

@@ -121,6 +121,12 @@ body {
 	font-size: 1.25rem;
 }
 
+.container-brown {
+	background-color: #b7a575;
+	margin: 4px;
+	padding: 8px;
+}
+
 /* Modal (from W3Schools) */
 .modal {
     display: block; /* Hidden by default */
