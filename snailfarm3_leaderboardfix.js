@@ -429,12 +429,13 @@ function slowupdateLeaderboard() {
 	}
 	
 	//Loop through hatcheries and store top ones to assign ranks
-	var avoidNext = [false, false, false, false, false];
+	var avoidNext = [0, 0, 0, 0, 0];
 	for(k = 1; k < 6; k++) {
 		var topHatch = 1;
 		var topGuy = 0;
 		for(j = 0; j < 5; j++) {
-			if(avoidNext[j] != true){
+			if(avoidNext[j] != 1){
+				console.log("avoidNext[" + j + "] evaluated to != 1");
 				if(d_leaderboard[j].hatchery > topHatch){
 					topHatch = d_leaderboard[j].hatchery;
 					topGuy = j;
@@ -443,7 +444,8 @@ function slowupdateLeaderboard() {
 		}
 		d_leaderboard[topGuy].rank = k;
 		console.log("New rank " + k + " : " + d_leaderboard[topGuy].address);
-		avoidNext[topGuy] = true;
+		avoidNext[topGuy] = 1;
+		console.log("Next time, avoid indice " + topGuy);
 	}
 	
 	showLeaderboard();
