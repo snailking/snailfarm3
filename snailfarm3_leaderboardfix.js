@@ -429,16 +429,20 @@ function slowupdateLeaderboard() {
 	}
 	
 	//Loop through hatcheries and store top ones to assign ranks
+	var avoidNext[false, false, false, false, false];
 	for(k = 1; k < 6; k++) {
 		var topHatch = 1;
 		var topGuy = 0;
 		for(j = 0; j < 5; j++) {
-			if(d_leaderboard[j].hatchery > topHatch){
-				topHatch = d_leaderboard[j].hatchery;
-				topGuy = j;
+			if(avoidNext[j] != true){
+				if(d_leaderboard[j].hatchery > topHatch){
+					topHatch = d_leaderboard[j].hatchery;
+					topGuy = j;
+				}
 			}
 		}
 		d_leaderboard[topGuy].rank = k;
+		avoidNext[topGuy] = true;
 	}
 	
 	showLeaderboard();
