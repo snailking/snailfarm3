@@ -2986,7 +2986,7 @@ function computeLeaderboard() {
 		//////console.log("d_leaderboard[" + position + "].rank = " + d_leaderboard[position].rank);
 		newEntry = true;
 	}
-	
+	/*
 	//Go through remaining positions to see hatcher rank and adjust other ranks
 	var j = 0;
 	var previousRank = d_leaderboard[position].rank
