@@ -431,7 +431,7 @@ function slowupdateLeaderboard() {
 	//Loop through hatcheries and store top ones to assign ranks
 	var avoidNext = [0, 0, 0, 0, 0];
 	for(k = 1; k < 6; k++) {
-		var topHatch = 1;
+		var topHatch = -1;
 		var topGuy = 0;
 		for(j = 0; j < 5; j++) {
 			if(avoidNext[j] != 1){
