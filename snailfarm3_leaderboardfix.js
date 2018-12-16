@@ -1055,8 +1055,9 @@ function updatePlayerEgg(){
 function fastPlayerEgg(){
 	if(z_playerEgg < 2) {
 		_prod = parseFloat(a_playerProd / 36000).toFixed(6); //hour prod divided to 100ms intervals
-		a_playerEgg = (parseFloat(a_playerEgg) + parseFloat(_prod)).toFixed(3);
-		playereggdoc.textContent = a_playerEgg;
+		a_playerEgg = (parseFloat(a_playerEgg) + parseFloat(_prod)).toFixed(4);
+		_egg = a_playerEgg.toFixed(3);
+		playereggdoc.textContent = _egg;
 	}
 }
 
