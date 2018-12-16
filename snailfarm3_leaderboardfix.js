@@ -442,6 +442,7 @@ function slowupdateLeaderboard() {
 			}
 		}
 		d_leaderboard[topGuy].rank = k;
+		console.log("New rank " + k + " : " + d_leaderboard[topGuy].address);
 		avoidNext[topGuy] = true;
 	}
 	
