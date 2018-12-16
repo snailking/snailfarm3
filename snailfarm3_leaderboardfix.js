@@ -437,6 +437,7 @@ function slowupdateLeaderboard() {
 				topHatch = d_leaderboard[j].hatchery;
 				topGuy = j;
 			}
+		}
 		d_leaderboard[topGuy].rank = k;
 	}
 	
