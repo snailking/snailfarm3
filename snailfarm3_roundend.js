@@ -294,15 +294,17 @@ function refreshDataSlow(){
 	slowupdatePlayerEgg();
 	//////console.log("refreshed leaderboard fully");
 }
+	
 
 var gameactivedoc = document.getElementById('gameactive');
+var gameactive2doc = document.getElementById('gameactive2');
 
 //Current state of the game
 function updateGameActive(){
 	gameActive(function(result) {
 		if(result == true) {
 			a_gameActive = true;
-			gameactive.innerHTML = "The game is active!";
+			gameactivedoc.innerHTML = "The game is active!";
 		} else {
 			a_gameActive = false;
 			nextRoundStart(function(result2) {
@@ -353,9 +355,10 @@ function fastupdateDowntime(){
 		if(downtime_seconds < 10) { downtime_seconds = "0" + downtime_seconds }
 		
 		if(a_downtime > 0) {
-			gameactive.innerHTML = "ROUND " + a_round + " IS OVER! <br>Next round starts in " + downtime_hours + ":" + downtime_minutes + ":" + downtime_seconds;
+			gameactivedoc.innerHTML = "ROUND " + a_round + " IS OVER! <br>Next round starts in " + downtime_hours + ":" + downtime_minutes + ":" + downtime_seconds;
+			gameactive2doc.innerHTML = downtime_hours + ":" + downtime_minutes + ":" + downtime_seconds;
 		} else {
-			gameactive.innerHTML = "The next round is ready to start!";
+			gameactivedoc.innerHTML = "The next round is ready to start!";
 		}
 	}	
 }
@@ -900,6 +903,7 @@ function updateLeader(){
 		l_account = "0x" + result.substring(26,66);
 		if(l_account != m_account) {
 			leaderdoc.textContent = formatEthAdr(l_account) + " is ";
+			leader2doc.textContent = formatEthAdr(l_account);
 		}
 		else {
 			leaderdoc.textContent = "YOU are ";
@@ -945,6 +949,7 @@ function updateRound(){
 	round(function(req) {
 		a_round = req;
 		rounddoc.textContent = a_round;
+		round2doc.textContent = a_round;
 	});
 }
 
