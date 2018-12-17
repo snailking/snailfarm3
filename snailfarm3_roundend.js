@@ -54,7 +54,7 @@ function CloseModal() {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal || event.target == modal2) {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
 }
@@ -899,6 +899,7 @@ function updateEthAccount(){
 //Current leader
 function updateLeader(){
 	var leaderdoc = document.getElementById('leader');
+	var leader2doc = document.getElementById('leader2');
 	currentLeader(function(result) {
 		l_account = "0x" + result.substring(26,66);
 		if(l_account != m_account) {
@@ -946,6 +947,7 @@ function updateContractBalance(){
 //Current round
 function updateRound(){
 	var rounddoc = document.getElementById('round');
+	var round2doc = document.getElementById('round2');
 	round(function(req) {
 		a_round = req;
 		rounddoc.textContent = a_round;
