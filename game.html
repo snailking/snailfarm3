@@ -66,6 +66,20 @@
 				</div>
 			</div>
 		</div>
+		<!-- ROUND DOWNTIME MODAL -->
+		<div id="modal" class="modal">
+			<div class="jumbotron modal-content" align="center">
+				<h2 class="black-shadow">The game is currently paused!</h2><br>
+				<div class="container-beige">
+					<h4><span id="leader2">?</span> won Round <span id="round2">?</span>. The next round will start in <span id="gameactive2">?</span>.</h4><br>
+					<h5>During round downtime, you can buy Acorns, claim your Share, withdraw your Balance and send the ThronePot to the SnailThrone.</h5><br>
+					<h5>Other actions are disabled.</h5><br>
+				</div>
+				<div class="container" align="center">
+					<button type="button" class="btn btn-success" onclick="CloseModal()">Got it!</button>
+				</div>
+			</div>
+		</div>
 		<!-- SNAILMASTER -->
 		<div class="container black-shadow druid-img">
 			<h2 align="center">Current Snailmaster: <span id="snailmaster">[undefined]</span></h2><br><br><br><br>
@@ -298,15 +312,15 @@
 			<a name="quickstart"><h2 align="center">GAME INFO</h2></a>
 			<div class="container-beige">		
 				<p><b>SnailFarm</b> is an idlegame played in rounds. The goal is to be the first to reach <b>1 million Snails</b>. Once you hatch enough snails to get to that number, you win the round and receive the current pot.</p><br>
-				<p>At the end of the round, <b>all Snails and Eggs are wiped</b>, and the game starts anew 12 hours later.</p><br>
+				<p>At the end of the round, <b>all Snails and Eggs are wiped</b>, including market Eggs, and the game starts anew 12 hours later.</p><br>
 			</div>
 			<div class="container-beige">
-					<p>To get started, you must first buy starting Snails. This one-time transaction will allow you to play <b>every</b> round.</p><br>
+					<p>To get started, you must first buy starting Snails. This one-time transaction will allow you to play <b>every</b> round, which you can join at your convenience.</p><br>
 					<p>Your Snails continuously <b>lay Eggs</b>, which you can hatch into even more Snails for a slight, fixed ETH cost. Each Egg can hatch into <b>more than one Snail</b>: the more Boosts you have, the more Snails per Egg.</p><br>
 					<p>Eggs can be <b>bought and sold directly from the smart contract</b>. The price of Eggs <b>vary widely</b> based on the current supply of Eggs and the eggpot. If the eggpot has a lot of ETH but the market holds very few Eggs, it's time to sell. On the contrary, if the eggpot has little ETH but the market is filled with Eggs, it's a good opportunity to buy.</p><br>
 			</div>
 			<div class="container-beige">		
-					<p>There is a special type of eggs: Red Eggs. Unlike normal Eggs and Snails, <b>Red Eggs carry over</b> from round to round. At the end of each round, every player receives <b>1 Red Egg for every 100 Snails</b> they own.</p><br>
+					<p>There is a special type of eggs: Red Eggs. Unlike normal Eggs and Snails, <b>Red Eggs carry over</b> from round to round. At the end of each round, players who didn't win receive <b>1 Red Egg for every 100 Snails</b> they own.</p><br>
 					<p>During rounds, the Red Harvest is another way to get Red Eggs. The Red Harvest puts <b>300 Red Eggs</b> for auction at an ETH price starting high and <b>decreasing with time</b>.</p><br>
 			</div>
 			<div class="container-beige">		
