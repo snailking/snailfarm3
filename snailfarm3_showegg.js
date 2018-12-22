@@ -45,17 +45,20 @@ span2.onclick = function() {
 /* MODAL */
 
 // Get the modal
-var modal = document.getElementById("modal");
+var downtime_modal = document.getElementById("downtimemodal");
+var wrongRound_modal = document.getElementById("wrongroundmodal");
 
 // Close modal on game info
 function CloseModal() {
-	modal.style.display = "none";
+	downtime_modal.style.display = "none";
+	wrongRound_modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == downtime_modal || event.target == wrongRound_modal) {
+        downtime_modal.style.display = "none";
+		wrongRound_modal.style.display = "none";
     }
 }
 
@@ -327,14 +330,14 @@ function updatePlayerStatus(){
 	var playerstatusdoc = document.getElementById('playerstatus')
 	if(a_gameActive == true){
 		if(a_playerRound == 0){
-			playerstatusdoc.innerHTML = '<button class="btn btn-success" onclick="webGetStarter()">Get Starting Snails!</button><br><p class="black-shadow">(will let you play every round, 0.004 ETH cost)</p>';
+			playerstatusdoc.innerHTML = '<button class="btn btn-lg btn-success" onclick="webGetStarter()">Get Starting Snails!</button><br><p class="black-shadow">(will let you play every round, 0.004 ETH cost)</p>';
 		} else if(a_playerRound != a_round){
-			playerstatusdoc.innerHTML = '<button class="btn btn-success" onclick="webJoinRound()">Join New Round!</button><br><p class="black-shadow">(will give you red eggs for your previous performance)</p>';
+			playerstatusdoc.innerHTML = '<button class="btn btn-lg btn-success" onclick="webJoinRound()">Join New Round!</button><br><p class="black-shadow">(will give you red eggs for your previous performance)</p>';
 		} else {
 			playerstatusdoc.innerHTML = '<img height="64" src="img/snail.png">';
 		}
 	} else {
-		playerstatusdoc.innerHTML = '<button class="btn btn-success" onclick="webBeginRound()">Begin New Round!</button><br><p class="black-shadow">(will only work if countdown timer is at 0)</p>';
+		playerstatusdoc.innerHTML = '<button class="btn btn-lg btn-success" onclick="webBeginRound()">Begin New Round!</button><br><p class="black-shadow">(will only work if countdown timer is at 0)</p>';
 	}
 }
 		
@@ -1098,7 +1101,7 @@ function updatePlayerRed(){
 //Planned red eggs next round
 function updatePlayerNextRed(){
 	var nextreddoc = document.getElementById('nextred');
-	nextreddoc.innerHTML = Math.floor(a_playerRed / 100);
+	nextreddoc.innerHTML = Math.floor(a_playerSnail / 100);
 }
 
 //Current player hatch size
@@ -1259,157 +1262,91 @@ function webPayThrone(){
 	});
 }
 
+//Generic check for game/player state
+function webCheck(_func){
+	if(a_gameActive == false){
+		downtime_modal.style.display = "block";
+	} else if(a_playerRound != a_round){
+		wrongRound_modal.style.display = "block";
+	} else {
+		_func();
+	}
+}
+
 //Hatch eggs
 function webHatchEgg(){
-	if(a_gameActive == true) {
-		var weitospend = web3.toWei(0.0008,'ether');
-		HatchEgg(weitospend, function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	var weitospend = web3.toWei(0.0008,'ether');
+	HatchEgg(weitospend, function(){
+	});
 }
 
 //Buy eggs
 function webBuyEgg(){
-	if(a_gameActive == true) {
-		var weitospend = web3.toWei(f_buy,'ether');
-		BuyEgg(weitospend, function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	var weitospend = web3.toWei(f_buy,'ether');
+	BuyEgg(weitospend, function(){
+	});
 }	
 
 //Sell eggs
 function webSellEgg(){
-	if(a_gameActive == true){
-		SellEgg(function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	SellEgg(function(){
+	});
 }
 
 //Become Snailmaster
 function webBecomeSnailmaster(){
-	if(a_gameActive == true){
-		BecomeSnailmaster(function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	BecomeSnailmaster(function(){
+	});
 }
 
 //Become SpiderQueen
 function webBecomeSpiderQueen(){
-	if(a_gameActive == true){
-		BecomeSpiderQueen(function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}	
+	BecomeSpiderQueen(function(){
+	});	
 }
 
 //Become SquirrelDuke
 function webBecomeSquirrelDuke(){
-	if(a_gameActive == true){
-		BecomeSquirrelDuke(function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	BecomeSquirrelDuke(function(){
+	});
 }
 
 //Become TadpolePrince
 function webBecomeTadpolePrince(){
-	if(a_gameActive == true){
-		var weitospend = web3.toWei(f_prince,'ether');
-		BecomeTadpolePrince(weitospend, function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	var weitospend = web3.toWei(f_prince,'ether');
+	BecomeTadpolePrince(weitospend, function(){
+	});
 }
 
 //Claim Red Harvest
 function webClaimRedHarvest(){
-	if(a_gameActive == true){
-		var weitospend = web3.toWei(a_harvestCost,'ether');
-		GrabRedHarvest(weitospend, function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	var weitospend = web3.toWei(a_harvestCost,'ether');
+	GrabRedHarvest(weitospend, function(){
+	});
 }
 
 //Hatch Red Eggs
 function webHatchRed(){
-	if(a_gameActive == true){
-		UseRedEgg(f_redhatch, function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	UseRedEgg(f_redhatch, function(){
+	});
 }
 	
 //Find Lettuce
 function webFindLettuce(){
-	if(a_gameActive == true){
 		FindLettuce(function(){
 		});
-	} else {
-		modal.style.display = "block";
-	}
 }
 
 //Find Carrot
 function webFindCarrot(){
-	if(a_gameActive == true){
-		var weitospend = web3.toWei(0.02,'ether');
-		FindCarrot(weitospend, function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
+	var weitospend = web3.toWei(0.02,'ether');
+	FindCarrot(weitospend, function(){
+	});
 }
 
 //Find Slug
 function webFindSlug(){
-	if(a_gameActive == true){
-		FindSlug(function(){
-		});
-	} else {
-		modal.style.display = "block";
-	}
-}
-
-/*
-
-
-//Sacrifice snail tokens
-function webSacrificeSnail(){
-	BecomePharaoh(f_sacrifice, function(){
-	});
-}
-
-
-
-
-
-
-
-//Claim divs
-function webClaimDiv(){
-	ClaimDivs(function(){
-	});
-}
-
-
-
-//Start a new round
-function webAscendGod(){
-	AscendGod(function(){
+	FindSlug(function(){
 	});
 }
 

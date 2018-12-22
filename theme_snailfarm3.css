@@ -1,7 +1,26 @@
+/* Hide/Show Eggs and Time since last Hatch/sale */
+/*
+div#show span#playeregg {
+  display: inline;
+}
+
+div#show:hover span#playeregg{
+  display: none;
+}
+
+div#show span#showtime {
+  display: none;
+}
+
+div#show:hover span#showtime {
+  display: inline;
+}
+*/
 p {
 	margin: 0px;
 	padding: 0px;
 }
+
 
 body {
 	background-image: url("img/forest_bg.jpg");
@@ -10,7 +29,6 @@ body {
 	background-position: center;
 	background-attachment: fixed;
 }
-
 
 .jumbotron {
 	background-color: #6c855d; /*#e8e6b6;*/
@@ -55,7 +73,7 @@ body {
 	border: 4px solid transparent;
 	border-image: url("img/brick.png") 30 round;
 	padding: 0.5rem 0.5rem;
-	margin: 1rem;
+	margin: 0.5rem;
 }
 
 .black-shadow {
@@ -121,15 +139,9 @@ body {
 	font-size: 1.25rem;
 }
 
-.container-brown {
-	background-color: #b7a575;
-	margin: 4px;
-	padding: 8px;
-}
-
 /* Modal (from W3Schools) */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 200px; /* Location of the box */
@@ -162,4 +174,26 @@ body {
     color: gray;
     text-decoration: none;
     cursor: pointer;
+}
+
+.text-fluid {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  .text-fluid {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .text-fluid {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .text-fluid {
+    font-size: 1.6rem;
+  }
 }
