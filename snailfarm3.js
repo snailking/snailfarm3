@@ -250,7 +250,7 @@ function refreshData(){
 	updateLettuceReq();
 	
 	updateHatchEstimate();
-	runLog();
+	//runLog();
 }
 
 //Refreshes some game data faster
