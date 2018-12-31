@@ -82,7 +82,7 @@ function formatEthValue2(ethstr){
 //Truncates ETH address to first 8 numbers
 function formatEthAdr(adr){
 	var _smallAdr = adr.substring(0, 10);
-	var _stringLink = '<a href="https://etherscan.io/address/' + adr + '" target="_blank">' + _smallAdr + '</a>';
+	var _stringLink = '<a href="https://etherscan.io/address/' + adr + '" target="_blank" style="text-decoration:none; color:inherit;">' + _smallAdr + '</a>';
 	return _stringLink;
 }
 
